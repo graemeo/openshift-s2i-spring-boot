@@ -18,3 +18,4 @@ COPY ./s2i/bin/ /usr/libexec/s2i
 
 USER 1001
 
+CMD ["/usr/bin/java", "-version"]
