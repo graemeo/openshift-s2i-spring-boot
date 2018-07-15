@@ -7,10 +7,10 @@ FROM openshift/base-centos7
 # TODO: Rename the builder environment variable to inform users about application you provide them
 # ENV BUILDER_VERSION 1.0
 
-#LABEL io.k8s.description="Platform for building xyz" \
-#      io.k8s.display-name="builder x.y.z" \
-#      io.openshift.expose-services="8080:http" \
-#      io.openshift.tags="builder,x.y.z,etc."
+LABEL io.k8s.description="S2I for building Spring Boot enabled application" \
+      io.k8s.display-name="Spring Boot" \
+      io.openshift.expose-services="8080:http" \
+      io.openshift.tags="builder,spring boot"
 
 RUN yum install -y java-1.8.0-openjdk-devel && yum clean all -y
 
