@@ -1,19 +1,29 @@
 apiVersion: v1
-kind: BuildConfig
+kind: Template
 metadata:
-    name: test-build-config
-spec:
-    output:
-        to:
-            apiVersion: v1
-            kind: ImageStreamTag
-            name: test-image-stream:latest
-    source:
-        git: 
-            ref: master
-            uri: https://github.com/graemeo/openshift-s2i-spring-boot.git
-    strategy:
-        type: Docker
+    name: spring-boot-s2i
+objects:
+    - apiVersion: v1
+      kind: BuildConfig
+      metadata:
+          name: test-build-config
+          labels:
+            app: "spring-boot"
+      spec:
+          output:
+              to:
+                  apiVersion: v1
+                  kind: ImageStreamTag
+                  name: test-image-stream:latest
+          source:
+              git: 
+                  ref: master
+                  uri: https://github.com/graemeo/openshift-s2i-spring-boot.git
+          strategy:
+              type: Docker
+
+parameters:
+
 #---
 #
 #apiVersion: v1

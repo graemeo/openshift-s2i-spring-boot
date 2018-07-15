@@ -1,5 +1,25 @@
 apiVersion: v1
-kind: ImageStream
+kind: Template
 metadata:
-    name: test-image-stream
-
+    name: test-image-stream-template
+    annotations:
+        openshift.io/display-name: "Spring Boot"
+        description: "spring boot s2i"
+objects:
+    - apiVersion: v1
+      kind: ImageStream
+      metadata:
+          labels:
+            app: "spring-boot"
+          name: test-image-stream
+          annotations:
+              io.openshift/display-name: "Spring Boot"
+              io.openshift/provider-display-name: "Provider Name"
+              descrption: "description..."
+              tags: "builder,java,spring-boot"
+          tags:
+            - name: latest
+              annotations:
+                description: "description..."
+                tags: "build,java,spring-boot"
+            
