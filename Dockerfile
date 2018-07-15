@@ -12,7 +12,7 @@ FROM openshift/base-centos7
 #      io.openshift.expose-services="8080:http" \
 #      io.openshift.tags="builder,x.y.z,etc."
 
-RUN yum install -y java-openjdk-1.8.0-devel && yum clean all -y
+RUN yum install -y java-1.8.0-openjdk-devel && yum clean all -y
 
 COPY ./s2i/bin/ /usr/libexec/s2i
 
