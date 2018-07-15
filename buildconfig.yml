@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: BuildConfig
+metadata:
+    name: test-build-config
+spec:
+    output:
+        to:
+            apiVersion: v1
+            kind: ImageStreamTag
+            name: test-image-stream:latest
+    source:
+        git: 
+            ref: master
+            uri: git@github.com:graemeo/openshift-s2i-spring-boot.git
+        sourceSecret:
+            name:
+    strategy:
+        type: Docker
+---
+
+apiVersion: v1
+kind: Pod
+metadata:
+    name: test-pod
+spec:
+    containers:
+    - image: 172.30.1.1:5000/graemeo-playground/test-image-stream
+      name: test-container
