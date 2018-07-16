@@ -13,6 +13,7 @@ LABEL io.k8s.description="S2I for building Spring Boot enabled application" \
       io.openshift.tags="builder,java,spring-boot"
 
 RUN yum install -y java-1.8.0-openjdk-devel && yum clean all -y
+RUN echo "hello"
 
 COPY ./s2i/bin/ /usr/libexec/s2i
 
