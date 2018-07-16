@@ -10,7 +10,7 @@ FROM openshift/base-centos7
 LABEL io.k8s.description="S2I for building Spring Boot enabled application" \
       io.k8s.display-name="Spring Boot" \
       io.openshift.expose-services="8080:http" \
-      io.openshift.tags="builder,spring boot"
+      io.openshift.tags="builder,java,spring-boot"
 
 RUN yum install -y java-1.8.0-openjdk-devel && yum clean all -y
 
