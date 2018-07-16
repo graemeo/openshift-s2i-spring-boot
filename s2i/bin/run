@@ -6,10 +6,10 @@
 # For more information see the documentation:
 #	https://github.com/openshift/source-to-image/blob/master/docs/builder_image.md
 #
-
+cd $HOME
 echo $(pwd) >> test.txt
 echo "###########" >> test.txt
 echo $(ls -al) >> test.txt
 echo $(ls -al $HOME/build/libs) >> test.txt
 
-#java -jar build/libs/room-api.jar
+java -jar build/libs/room-api.jar

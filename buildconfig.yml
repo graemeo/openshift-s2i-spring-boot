@@ -21,6 +21,7 @@ objects:
                   uri: https://github.com/graemeo/openshift-s2i-spring-boot.git
           strategy:
               type: Docker
+              noCache: true
 
 parameters:
 
