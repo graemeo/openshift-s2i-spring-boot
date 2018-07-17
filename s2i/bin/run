@@ -6,6 +6,10 @@
 # For more information see the documentation:
 #	https://github.com/openshift/source-to-image/blob/master/docs/builder_image.md
 #
+printenv
+
+echo $SOURCE_CONTEXT_DIR
+
 cd $HOME
 
 java -jar build/libs/room-api.jar
